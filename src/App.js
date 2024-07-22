@@ -1,24 +1,25 @@
-import logo from './logo.svg';
+import React, { useEffect, useState } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import BlogPostList from './components/BlogPostList';
+import BlogPostDetails from './components/BlogPostDetails';
+import axios from 'axios';
 import './App.css';
 
 function App() {
+  const [posts, setPosts] = useState([]);
+  useEffect(() => {
+    axios.get(`https://newsapi.org/v2/everything?q=keyword&apiKey=39945a252ad74448a22e063b55e27d1b&pageSize=100`)
+      .then(response => {
+        setPosts(response.data.articles);
+      });
+  }, []);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<BlogPostList />} />
+        <Route path="/post/:id" element={<BlogPostDetails posts={posts}/>} />
+      </Routes>
+    </Router>
   );
 }
 

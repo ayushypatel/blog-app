@@ -1,38 +1,145 @@
-.App {
-  text-align: center;
-}
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.blog-list-container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+.blog-list-item {
+  display: flex;
+  align-items: flex-start;
+  border: 1px solid #ddd;
+  margin: 20px 0;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  width: 80%;
+}
+
+.blog-link {
+  display: flex;
+  text-decoration: none;
+  color: inherit;
+}
+
+.blog-image {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  margin-right: 20px;
+  border-radius: 5px;
+}
+
+.blog-content {
+  display: flex;
+  flex-direction: column;
+  
+}
+
+.blog-content h2 {
+  font-size: 1.5em;
+  margin: 0 0 10px 0;
+  font-family: 'Lora', serif;
+}
+
+.blog-content p {
+  margin: 5px 0;
+  
+}
+
+.pagination-buttons {
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+  margin-top: 20px;
+}
+
+button {
+  padding: 10px 20px;
+  border: none;
+  background-color: #007bff;
   color: white;
+  cursor: pointer;
+  border-radius: 5px;
 }
 
-.App-link {
-  color: #61dafb;
+button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+.pagination-buttons{
+  margin-bottom: 10px;
+}
+.loader-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Adjust as necessary to fit your layout */
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.blog-list-container {
+  padding: 20px;
+}
+.published{
+  font-weight: 600;
+  
+}
+.back-button {
+  display: block;
+  margin-top: 10px;
+  text-decoration: none;
+  color: #007BFF;
+  
+}
+.blog-details-container {
+  padding: 20px;
+  max-width: 900px;
+  margin: 0 auto;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.blog-title {
+  font-family: 'Lora', serif;
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+.blog-image-detail {
+  max-width: 80%;
+  height: auto;
+  display: block;
+  margin: 0 auto 20px auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.blog-content {
+  font-size: 1.2em;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.blog-date {
+  font-family: 'Lora', serif;
+  font-size: 0.9em;
+  color: #777;
+  margin-bottom: 20px;
+}
+
+.back-button {
+  display: inline-block;
+  padding: 10px 20px;
+  font-family: 'Lora', serif;
+  font-size: 1em;
+  color: #fff;
+  background-color: #007BFF;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+.back-button:hover {
+  background-color: #0056b3;
 }
